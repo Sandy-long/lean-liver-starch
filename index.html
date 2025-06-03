@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>肝糖原合成</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  <style>
+    :root {
+      --mermaid-bg-color: transparent; /* Mermaid 内部节点背景透明 */
+    }
+
+    body {
+      font-family: "Microsoft YaHei", sans-serif;
+      margin: 0;                    /* 取消浏览器默认 margin */
+      padding: 0 20px 20px 20px;    /* 上方不留白，左右和底部保留 20px */
+      background: #f0f0f0;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin: 0;       /* 取消默认上下 margin */
+      text-align: center;
+      color: #444;
+    }
+
+    .header-bg {
+      background-color: #f7f7f7;
+      border-bottom: 4px solid #3498db;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      padding: 1.8rem 1rem;  /* 根据需求可再调小，例如 1rem 0.5rem */
+      box-sizing: border-box;
+    }
+
+    .subtitle {
+      max-width: 800px;
+      margin: 1rem auto 3rem auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #666;
+      text-align: left;
+      font-weight: 400;
+    }
+
+    .mermaid {
+      background: transparent;     /* 容器背景透明 */
+      border: none;                /* 去掉边框 */
+      border-radius: 8px;
+      padding: 20px;
+      margin: 40px auto;
+      max-width: 1200px;
+      text-align: center;
+    }
+
+    .summary-references {
+      max-width: 800px;
+      margin: 40px auto 40px auto;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #333;
+      text-align: left;
+      background: #f7f7f7;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      border-left: 6px solid #1e90ff;
+      font-family: "Microsoft YaHei", sans-serif, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .summary-references strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 0.6em;
+    }
+
+    .references p {
+      margin: 0.4em 0;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .references ul {
+      padding-left: 1.4em;
+      margin: 0.4em 0;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    /* 只加粗，不变色 */
+    .highlight {
+      font-weight: bold;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-bg">
+    <h1>肝糖原合成</h1>
+  </div>
+
+  <p class="subtitle">
+    肝糖原合成是肝细胞在摄入葡萄糖后，通过一系列酶促反应将葡萄糖转化为糖原以便储存的过程。以下流程图清晰展示了从葡萄糖进入肝细胞到糖原形成的关键步骤和能量变化。
+  </p>
+
+  <div class="mermaid">
+flowchart TD
+  
+    L1[🧱 糖原合成路径（在细胞质）]
+    L1 --> L2[葡萄糖进入肝细胞]
+    L2 --> L2a[葡萄糖 + ATP（提供一个磷酸集团）+ 酶（己糖激酶 或 葡萄糖激酶）]
+    L2a --> L2b[葡萄糖-6-磷酸（G6P）+ ADP，ΔG ≈ −30.5 kJ/mol]
+    L2b -.->|磷酸位置转移<br>G6P的C1位加磷酸基团| L2d[葡萄糖-1,6-双磷酸 + 非磷酸化的丝氨酸残基]
+    L2d --> L2f[葡萄糖-1-磷酸（G1P）+ 磷酸化的丝氨酸残基（酶恢复活性）]
+    L2f --> L2g[葡萄糖-1-磷酸 + UTP（三磷酸尿苷）]
+    L2g --> L2h[UDP-葡萄糖 ， ΔG ≈ −19 kJ/mol<br>+焦磷酸（PPi→ 2Pi），ΔG ≈ −33 kJ/mol]
+    L2h -.->|糖原链延长| L2i[UDP-葡萄糖+ 葡萄糖n]
+    L2i -.->|糖原合酶|L2k[葡萄糖ₙ₊₁  +  UDP] 
+    L2k -.->|分支酶切割葡萄糖ₙ₊₁|L2m[葡萄糖ₙ₋ₘ  +  葡萄糖ₘ]
+    L2m -.->|分支酶将短链连接至C6羟基，形成α-1,6键|L2n[有分支的糖原链]
+    L2n-.->|每个糖原颗粒约含55,000个葡萄糖单位（大约10层球状结构）<br>每个肝细胞可储存约 10–20颗糖原颗粒
+|L2o[糖原]
+  </div>
+
+  <div class="summary-references">
+    <strong>总结：肝糖原合成是肝细胞将葡萄糖转化为储存形式糖原的关键代谢过程</strong><br>
+    1. 肝糖原合成主要在肝细胞的<span class="highlight">细胞质</span>中进行，是将血糖转化并储存为糖原的关键过程。<br>
+    2. 初始阶段，葡萄糖被磷酸化为葡萄糖-6-磷酸（G6P），随后转化为葡萄糖-1-磷酸（G1P）。<br>
+    3. G1P 与 UTP（三磷酸尿苷）反应形成<span class="highlight">UDP-葡萄糖</span>，这是糖原<span class="highlight">延长</span>的活性形式。<br>
+    4. 糖原合酶负责将葡萄糖单元以 α-1,4 糖苷键方式添加到糖原主链上。<br>
+    5. 分支酶将部分直链转移至主链 C6 位羟基，形成 α-1,6 键，增加糖原的分支性和溶解度。<br>
+    6. 每个肝细胞可储存约 10–20 个糖原颗粒，每个颗粒含约 55,000 个葡萄糖单元，作为短期血糖调节的重要<span class="highlight">能源储备</span>。<br><br>
+    <strong>参考文献：</strong>
+    <ul>
+      <li>Glycogen metabolism in liver cells. <em>Journal of Cellular Biochemistry</em>, 2019.</li>
+      <li>Regulation of hepatic glycogen synthesis. <em>Metabolism</em>, 2021.</li>
+      <li>Glycogen synthase activity and control mechanisms. <em>Biochemical Journal</em>, 2020.</li>
+      <li>Liver glucose metabolism and storage. <em>Bioscience Reports</em>, 2018.</li>
+    </ul>
+  </div>
+
+</body>
+</html>
