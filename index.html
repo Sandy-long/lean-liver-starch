@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>肝糖原合成</title>
+  <title>肝糖原合成及供能</title>
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
     mermaid.initialize({ startOnLoad: true });
@@ -101,7 +101,7 @@
 <body>
 
   <div class="header-bg">
-    <h1>肝糖原合成</h1>
+    <h1>肝糖原合成及供能</h1>
   </div>
 
   <p class="subtitle">
@@ -115,7 +115,7 @@ flowchart TD
     L1 --> L2[葡萄糖进入肝细胞]
     L2 --> L2a[葡萄糖 + ATP（提供一个磷酸集团）+ 酶（葡萄糖激酶，Km 值高（低亲和力），只有在血糖较高时（如餐后）才活跃）]
     L2a --> L2b[葡萄糖-6-磷酸（G6P）+ ADP，ΔG ≈ −30.5 kJ/mol]
-    L2b -.->|磷酸位置转移<br>G6P的C1位加磷酸基团| L2d[葡萄糖-1,6-双磷酸 + 非磷酸化的丝氨酸残基]
+    L2b -.->|磷酸位置转移<br>磷酸葡萄糖变位酶<br>G6P的C1位加磷酸基团| L2d[葡萄糖-1,6-双磷酸（短暂出现） + 非磷酸化的丝氨酸残基]
     L2d --> L2f[葡萄糖-1-磷酸（G1P）+ 磷酸化的丝氨酸残基（酶恢复活性）]
     L2f --> L2g[葡萄糖-1-磷酸 + UTP（三磷酸尿苷）]
     L2g --> L2h[UDP-葡萄糖 ， ΔG ≈ −19 kJ/mol<br>+焦磷酸（PPi→ 2Pi），ΔG ≈ −33 kJ/mol]
@@ -123,18 +123,22 @@ flowchart TD
     L2i -.->|糖原合酶|L2k[葡萄糖ₙ₊₁  +  UDP] 
     L2k -.->|分支酶切割葡萄糖ₙ₊₁|L2m[葡萄糖ₙ₋ₘ  +  葡萄糖ₘ]
     L2m -.->|分支酶将短链连接至C6羟基，形成α-1,6键|L2n[有分支的糖原链]
-    L2n-.->|每个糖原颗粒约含55,000个葡萄糖单位（大约10层球状结构）<br>每个肝细胞可储存约 10–20颗糖原颗粒
+    L2n-.->|每个糖原颗粒约含55,000个葡萄糖单位（大约10层球状结构）<br>每个肝细胞可储存约 10–40颗糖原颗粒
 |L2o[糖原]
+     L2o-.->|糖原磷酸化酶|L2p[ 葡萄糖-1-磷酸]
+     L2p-.->|磷酸葡萄糖变位酶|L2q[ 葡萄糖-6-磷酸]
+    L2q-.->|葡萄糖-6-磷酸酶|L2r[ 葡萄糖进入血液]
+    
   </div>
 
   <div class="summary-references">
     <strong>总结：肝糖原合成是肝细胞将葡萄糖转化为储存形式糖原的关键代谢过程</strong><br>
-    1. 肝糖原合成主要在肝细胞的<span class="highlight">细胞质</span>中进行，是将血糖转化并储存为糖原的关键过程。<br>
-    2. 初始阶段，葡萄糖被磷酸化为葡萄糖-6-磷酸（G6P），随后转化为葡萄糖-1-磷酸（G1P）。<br>
-    3. G1P 与 UTP（三磷酸尿苷）反应形成<span class="highlight">UDP-葡萄糖</span>，这是糖原<span class="highlight">延长</span>的活性形式。<br>
-    4. 糖原合酶负责将葡萄糖单元以 α-1,4 糖苷键方式添加到糖原主链上。<br>
-    5. 分支酶将部分直链转移至主链 C6 位羟基，形成 α-1,6 键，增加糖原的分支性和溶解度。<br>
-    6. 每个肝细胞可储存约 10–20 个糖原颗粒，每个颗粒含约 55,000 个葡萄糖单元，作为短期血糖调节的重要<span class="highlight">能源储备</span>。<br><br>
+    1. 肝糖原是在肝细胞的<span class="highlight">细胞质</span>中合成的<span class="highlight">多葡萄糖链多糖</span>，是人体维持血糖的重要“糖库”。<br>
+    2. 肝糖原用来<span class="highlight">维持血糖稳定</span>，特别是<span class="highlight">在空腹、禁食、夜间或运动初期</span>时为全身（尤其是大脑）提供葡萄糖。<br>
+    3. 在<span class="highlight">胰高血糖素或肾上腺素作用</span>下，肝糖原被分解（糖原分解作用），释放葡萄糖入血。<br>
+    4. 葡萄糖-6-磷酸酶是肝脏特有，帮助肝糖原释放游离葡萄糖进入血液。<br>
+    5. 与肌糖原区别在于：肝糖原用于维持血糖，肌糖原则<span class="highlight">仅供肌肉自身</span>使用，不参与升高血糖。<br>
+    6. 人体肝细胞总数 ≈ 2.5 × 10¹¹ 个，每个肝细胞可储存约 10–20 个糖原颗粒，每个颗粒含约 55,000 个葡萄糖单元，作为短期血糖调节的重要<span class="highlight">能源储备</span>，也可说，成人肝糖原储量约100g，可供维持血糖8–12小时。<br><br>
     <strong>参考文献：</strong>
     <ul>
       <li>Glycogen metabolism in liver cells. <em>Journal of Cellular Biochemistry</em>, 2019.</li>
